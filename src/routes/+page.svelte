@@ -7,8 +7,8 @@
 </script>
 
 <svelte:head>
-	<title>Cuore a Quattro Zampe – Protezione e adozione animali</title>
-	<meta name="description" content="Associazione Cuore a Quattro Zampe: tutela, recupero, adozione e sostegno agli animali." />
+	<title>Cuore a 4 Zampe – Protezione e adozione animali</title>
+	<meta name="description" content="Associazione 4 a Quattro Zampe: tutela, recupero, adozione e sostegno agli animali." />
 </svelte:head>
 
 <main class="font-sans text-gray-900">

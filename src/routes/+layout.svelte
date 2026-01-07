@@ -6,10 +6,10 @@
 </script>
 
 <svelte:head>
-	<title>Cuore a Quattro Zampe – Protezione animali</title>
+	<title>Cuore a 4 Zampe – Protezione animali</title>
 	<meta
 		name="description"
-		content="Associazione Cuore a Quattro Zampe: tutela, recupero e adozione di animali in difficoltà."
+		content="Associazione Cuore a 4 Zampe: tutela, recupero e adozione di animali in difficoltà."
 	/>
 	<link rel="icon" href={favicon} />
 </svelte:head>

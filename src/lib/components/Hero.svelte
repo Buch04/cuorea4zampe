@@ -12,8 +12,8 @@
 			<h1 class="text-5xl md:text-6xl font-extrabold text-white mb-4 leading-tight drop-shadow-lg">{title}</h1>
 			<p class="text-lg md:text-xl text-white mb-8 max-w-2xl opacity-90">{subtitle}</p>
 			<div class="flex flex-col sm:flex-row gap-4 justify-center">
-				<a href="#adozioni" class="inline-flex items-center justify-center bg-white text-red-600 px-8 py-3 font-semibold rounded-full shadow-lg hover:shadow-xl transform-gpu hover:-translate-y-0.5 transition">Adotta ora</a>
-				<a href="#sostieni" class="inline-flex items-center justify-center border border-white/30 text-white px-7 py-3 font-semibold rounded-full hover:bg-white/10 transition">Sostienici</a>
+				<a href="/cosa-facciamo" class="inline-flex items-center justify-center bg-white text-red-600 px-8 py-3 font-semibold rounded-full shadow-lg hover:shadow-xl transform-gpu hover:-translate-y-0.5 transition">Scopri</a>
+				<a href="/dona" class="inline-flex items-center justify-center border border-white/30 text-white px-7 py-3 font-semibold rounded-full hover:bg-white/10 transition">Dona</a>
 			</div>
 		</div>
 	</div>

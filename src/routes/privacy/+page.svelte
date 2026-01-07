@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<main class="max-w-3xl mx-auto px-4 py-10 text-gray-800">
+<main class="max-w-3xl mx-auto px-4 py-10 text-gray-800 pt-24">
  	<h1 class="text-2xl font-bold mb-6 text-center">INFORMATIVA SULLA PRIVACY AI SENSI DEL REGOLAMENTO (UE) 2016/679 (GDPR)</h1>
 
  	<p class="mb-4">
