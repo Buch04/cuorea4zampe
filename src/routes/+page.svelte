@@ -1,9 +1,9 @@
 <script>
 	import Hero from '$lib/components/Hero.svelte';
 	import CosaFacciamo from '$lib/components/CosaFacciamo.svelte';
-	import Campagne from '$lib/components/Campagne.svelte';
-	import News from '$lib/components/News.svelte';
-	import CTASection from '$lib/components/CTASection.svelte';
+	import HomepageCTA from '$lib/components/HomepageCTA.svelte';
+	import WhereFindUs from '$lib/components/WhereFindUs.svelte';
+    import News from '$lib/components/News.svelte';
 </script>
 
 <svelte:head>
@@ -12,9 +12,9 @@
 </svelte:head>
 
 <main class="font-sans text-gray-900">
-	<Hero />
-	<CosaFacciamo />
-	<Campagne />
-	<News />
-	<CTASection />
+ 	<Hero/>
+ 	<CosaFacciamo />
+ 	<News />
+ 	<HomepageCTA />
+	<WhereFindUs />
 </main>
