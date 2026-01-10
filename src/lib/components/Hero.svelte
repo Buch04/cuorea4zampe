@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 
 	// Default carousel images — update filenames if necessary
-	export let images = ['/hero.jpeg', '/hero-2.jpeg', '/hero-4.jpeg'];
+	export let images = ['/hero.jpeg', '/hero-6.jpeg'];
 	export let title = 'Dalla parte degli animali';
 	export let subtitle = 'Sosteniamo, proteggiamo e cerchiamo casa agli animali più vulnerabili.';
 	export let compact = false;
@@ -38,12 +38,6 @@
 						<a href="/cosa-facciamo" class="inline-flex items-center justify-center bg-white text-red-600 px-6 py-2.5 font-semibold rounded-full shadow-lg hover:shadow-xl transform-gpu hover:-translate-y-0.5 transition">Scopri</a>
 						<a href="/dona" class="inline-flex items-center justify-center border border-white/25 text-white px-5 py-2.5 font-semibold rounded-full hover:bg-white/10 transition">Dona</a>
 					</div>
-					<div class="absolute left-4 top-1/2 -translate-y-1/2">
-						<button aria-label="Prev" class="p-2 rounded-full bg-black/30 text-white hover:bg-black/40" on:click={() => { go(-1); clearInterval(timer); timer = setInterval(() => go(1), delay); }}>&larr;</button>
-					</div>
-					<div class="absolute right-4 top-1/2 -translate-y-1/2">
-						<button aria-label="Next" class="p-2 rounded-full bg-black/30 text-white hover:bg-black/40" on:click={() => { go(1); clearInterval(timer); timer = setInterval(() => go(1), delay); }}>&rarr;</button>
-					</div>
 					<div class="flex justify-center gap-2 mt-6">
 						{#each images as _, i}
 							<button aria-label={i === index ? `Slide ${i+1} (current)` : `Slide ${i+1}`} class="w-3 h-3 rounded-full" on:click={() => { goTo(i); clearInterval(timer); timer = setInterval(() => go(1), delay); }} style="background: {i === index ? 'white' : 'rgba(255,255,255,0.4)'}"></button>
@@ -63,12 +57,6 @@
 					<div class="flex flex-col sm:flex-row gap-4 justify-center">
 						<a href="/cosa-facciamo" class="inline-flex items-center justify-center bg-white text-red-600 px-8 py-3 font-semibold rounded-full shadow-lg hover:shadow-xl transform-gpu hover:-translate-y-0.5 transition">Scopri</a>
 						<a href="/dona" class="inline-flex items-center justify-center border border-white/30 text-white px-7 py-3 font-semibold rounded-full hover:bg-white/10 transition">Dona</a>
-					</div>
-					<div class="absolute left-6 top-1/2 -translate-y-1/2">
-						<button aria-label="Prev" class="p-3 rounded-full bg-black/30 text-white hover:bg-black/40" on:click={() => { go(-1); clearInterval(timer); timer = setInterval(() => go(1), delay); }}>&larr;</button>
-					</div>
-					<div class="absolute right-6 top-1/2 -translate-y-1/2">
-						<button aria-label="Next" class="p-3 rounded-full bg-black/30 text-white hover:bg-black/40" on:click={() => { go(1); clearInterval(timer); timer = setInterval(() => go(1), delay); }}>&rarr;</button>
 					</div>
 					<div class="flex justify-center gap-3 mt-8">
 						{#each images as _, i}
