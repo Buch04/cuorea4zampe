@@ -1,19 +1,11 @@
 <script>
-  let name = '';
-  let email = '';
-  let message = '';
-
-  function becomeMember() {
-    console.log('Nuova richiesta di associazione', { name, email, message });
-    // Qui andrebbe la logica per inviare i dati a un server
-    alert('Grazie per la tua richiesta! Ti contatteremo presto.');
-    name = '';
-    email = '';
-    message = '';
-  }
+  import Spacer from '$lib/components/Spacer.svelte';
+  import { enhance } from '$app/forms';
+  export let form;
 </script>
 
 <div class="bg-gray-50 py-12">
+  <Spacer />
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="lg:text-center">
       <h2 class="text-base text-red-600 font-semibold tracking-wide uppercase">Diventa Socio</h2>
@@ -46,18 +38,33 @@
         <div class="mt-8 lg:mt-0">
           <div class="bg-white p-8 rounded-lg shadow-lg">
             <h3 class="text-2xl font-bold text-gray-900">Richiedi di diventare socio</h3>
-            <form on:submit|preventDefault={becomeMember} class="mt-6 space-y-6">
+            {#if form?.success}
+              <div class="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg" role="alert">
+                <span class="font-bold">Grazie!</span> La tua richiesta è stata ricevuta.
+              </div>
+            {/if}
+            {#if form?.error}
+              <div class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg" role="alert">
+                <span class="font-bold">Errore!</span> Si è verificato un problema. Riprova più tardi.
+              </div>
+            {/if}
+            <form method="POST" use:enhance class="mt-6 space-y-6">
+              <!-- Honeypot field (anti-spam) -->
+              <div class="hidden" aria-hidden="true">
+                <label for="website">Non compilare questo campo</label>
+                <input type="text" name="website" id="website" tabindex="-1" autocomplete="off">
+              </div>
               <div>
                 <label for="name" class="block text-sm font-medium text-gray-700">Nome e Cognome</label>
-                <input type="text" id="name" bind:value={name} required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500">
+                <input type="text" name="name" id="name" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500">
               </div>
               <div>
                 <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                <input type="email" id="email" bind:value={email} required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500">
+                <input type="email" name="email" id="email" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500">
               </div>
               <div>
                 <label for="message" class="block text-sm font-medium text-gray-700">Lascia un messaggio (facoltativo)</label>
-                <textarea id="message" bind:value={message} rows="4" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500"></textarea>
+                <textarea name="message" id="message" rows="4" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500"></textarea>
               </div>
               <div>
                 <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">

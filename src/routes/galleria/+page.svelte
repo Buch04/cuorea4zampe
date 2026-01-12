@@ -1,4 +1,5 @@
 <script>
+  import Spacer from '$lib/components/Spacer.svelte';
   const images = [
     { src: '/hero.jpeg', alt: 'Immagine dalla vita del rifugio 1' },
     { src: '/hero-2.jpeg', alt: 'Immagine dalla vita del rifugio 2' },
@@ -12,6 +13,7 @@
 </script>
 
 <div class="bg-gray-50 py-12">
+  <Spacer />
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="lg:text-center">
       <h2 class="text-base text-red-600 font-semibold tracking-wide uppercase">Galleria</h2>

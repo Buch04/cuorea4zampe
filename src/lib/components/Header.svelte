@@ -40,7 +40,7 @@
 		<div class="flex justify-between items-center h-20 py-3">
 			<div class="flex items-center">
 				<a href="/" class="flex items-center gap-3">
-					<img src={logoSrc} alt="Cuore a 4 Zampe" class="h-12 w-auto rounded-full border border-white/20 shadow-sm" />
+					<img src={logoSrc} alt="Cuore a 4 Zampe" class="h-16 w-auto" />
 					<span class={"font-semibold text-lg " + (isHome ? 'text-white drop-shadow' : 'text-gray-900')}>Cuore a 4 Zampe</span>
 				</a>
 			</div>
@@ -67,8 +67,7 @@
 							</div>
 							<a href="/adozioni-a-distanza" on:click={() => altroOpen = false} class="block px-4 py-2 text-gray-900 hover:bg-gray-100" class:font-bold={isActive('/adozioni-a-distanza')} class:text-red-600={isActive('/adozioni-a-distanza')}>Adozioni a distanza</a>
 							<a href="/volontariato" on:click={() => altroOpen = false} class="block px-4 py-2 text-gray-900 hover:bg-gray-100" class:font-bold={isActive('/volontariato')} class:text-red-600={isActive('/volontariato')}>Volontariato</a>
-							<a href="/gallerie" on:click={() => altroOpen = false} class="block px-4 py-2 text-gray-900 hover:bg-gray-100" class:font-bold={isActive('/gallerie')} class:text-red-600={isActive('/gallerie')}>Gallerie</a>
-							<a href="/emergenze" on:click={() => altroOpen = false} class="block px-4 py-2 text-gray-900 hover:bg-gray-100" class:font-bold={isActive('/emergenze')} class:text-red-600={isActive('/emergenze')}>Emergenze</a>
+							<a href="/galleria" on:click={() => altroOpen = false} class="block px-4 py-2 text-gray-900 hover:bg-gray-100" class:font-bold={isActive('/galleria')} class:text-red-600={isActive('/galleria')}>Galleria</a>
 						</div>
 					{/if}
 				</div>
@@ -101,8 +100,7 @@
 					<a href="/adozioni" on:click={closeMenu} class="block px-2 py-2" class:font-bold={isActive('/adozioni')} class:text-red-600={isActive('/adozioni')}>Adozioni</a>
 					<a href="/adozioni-a-distanza" on:click={closeMenu} class="block px-2 py-2" class:font-bold={isActive('/adozioni-a-distanza')} class:text-red-600={isActive('/adozioni-a-distanza')}>Adozioni a distanza</a>
 					<a href="/volontariato" on:click={closeMenu} class="block px-2 py-2" class:font-bold={isActive('/volontariato')} class:text-red-600={isActive('/volontariato')}>Volontariato</a>
-					<a href="/gallerie" on:click={closeMenu} class="block px-2 py-2" class:font-bold={isActive('/gallerie')} class:text-red-600={isActive('/gallerie')}>Gallerie</a>
-					<a href="/emergenze" on:click={closeMenu} class="block px-2 py-2" class:font-bold={isActive('/emergenze')} class:text-red-600={isActive('/emergenze')}>Emergenze</a>
+					<a href="/galleria" on:click={closeMenu} class="block px-2 py-2" class:font-bold={isActive('/galleria')} class:text-red-600={isActive('/galleria')}>Galleria</a>
 					<a href="/contatti" on:click={closeMenu} class="block px-2 py-2" class:font-bold={isActive('/contatti')} class:text-red-600={isActive('/contatti')}>Contatti</a>
 					<a href="/sostienici" on:click={closeMenu} class={"block px-2 py-2 mt-2 inline-block " + (isHome ? 'bg-white/95 text-red-600 px-4 py-2 rounded-full shadow-md' : 'bg-red-600 text-white px-4 py-2 rounded-full shadow-md')}>Sostienici</a>
 				</nav>

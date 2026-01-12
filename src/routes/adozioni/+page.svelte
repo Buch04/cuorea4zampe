@@ -1,4 +1,5 @@
 <script>
+  import Spacer from '$lib/components/Spacer.svelte';
   const animals = [
     { name: 'Bobby', age: '2 anni', gender: 'Maschio', breed: 'Meticcio', description: 'Molto affettuoso e giocherellone. Va d\'accordo con altri cani.', image: '/img1.jpeg' },
     { name: 'Luna', age: '6 mesi', gender: 'Femmina', breed: 'Europeo', description: 'Dolce e in cerca di coccole. Abituata alla vita in appartamento.', image: '/hero-2.jpeg' },
@@ -11,6 +12,7 @@
 </script>
 
 <div class="bg-gray-50 py-12">
+  <Spacer />
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="lg:text-center">
       <h2 class="text-base text-red-600 font-semibold tracking-wide uppercase">Adozioni</h2>

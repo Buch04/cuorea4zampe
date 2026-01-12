@@ -1,23 +1,11 @@
 <script>
-  let name = '';
-  let email = '';
-  let phone = '';
-  let availability = '';
-  let message = '';
-
-  function apply() {
-    console.log('Nuova candidatura per volontariato', { name, email, phone, availability, message });
-    alert('Grazie per esserti candidato! Ti contatteremo presto.');
-    // Reset form
-    name = '';
-    email = '';
-    phone = '';
-    availability = '';
-    message = '';
-  }
+  import Spacer from '$lib/components/Spacer.svelte';
+  import { enhance } from '$app/forms';
+  export let form;
 </script>
 
 <div class="bg-gray-50 py-12">
+  <Spacer />
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="lg:text-center">
       <h2 class="text-base text-red-600 font-semibold tracking-wide uppercase">Volontariato</h2>
@@ -53,26 +41,41 @@
 
     <div class="mt-16 bg-white p-8 rounded-lg shadow-lg">
       <h3 class="text-2xl font-bold text-gray-900 text-center">Manda la tua candidatura</h3>
-      <form on:submit|preventDefault={apply} class="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+      {#if form?.success}
+        <div class="p-4 mb-6 text-sm text-green-700 bg-green-100 rounded-lg text-center" role="alert">
+          <span class="font-bold">Grazie!</span> La tua candidatura è stata inviata. Ti contatteremo presto.
+        </div>
+      {/if}
+      {#if form?.error}
+        <div class="p-4 mb-6 text-sm text-red-700 bg-red-100 rounded-lg text-center" role="alert">
+          <span class="font-bold">Errore!</span> Impossibile inviare la candidatura al momento.
+        </div>
+      {/if}
+      <form method="POST" use:enhance class="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+        <!-- Honeypot field (anti-spam) -->
+        <div class="hidden sm:col-span-2" aria-hidden="true">
+          <label for="website">Non compilare questo campo</label>
+          <input type="text" name="website" id="website" tabindex="-1" autocomplete="off">
+        </div>
         <div class="sm:col-span-1">
           <label for="name" class="block text-sm font-medium text-gray-700">Nome e Cognome</label>
-          <input type="text" id="name" bind:value={name} required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500">
+          <input type="text" name="name" id="name" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500">
         </div>
         <div class="sm:col-span-1">
           <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-          <input type="email" id="email" bind:value={email} required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500">
+          <input type="email" name="email" id="email" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500">
         </div>
         <div class="sm:col-span-1">
           <label for="phone" class="block text-sm font-medium text-gray-700">Telefono</label>
-          <input type="tel" id="phone" bind:value={phone} required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500">
+          <input type="tel" name="phone" id="phone" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500">
         </div>
         <div class="sm:col-span-1">
           <label for="availability" class="block text-sm font-medium text-gray-700">La tua disponibilità</label>
-          <input type="text" id="availability" bind:value={availability} placeholder="Es: weekend, martedì pomeriggio" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500">
+          <input type="text" name="availability" id="availability" placeholder="Es: weekend, martedì pomeriggio" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500">
         </div>
         <div class="sm:col-span-2">
           <label for="message" class="block text-sm font-medium text-gray-700">Parlaci un po' di te</label>
-          <textarea id="message" bind:value={message} rows="4" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500"></textarea>
+          <textarea name="message" id="message" rows="4" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500"></textarea>
         </div>
         <div class="sm:col-span-2">
           <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">

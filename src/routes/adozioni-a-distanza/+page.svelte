@@ -1,4 +1,5 @@
 <script>
+  import Spacer from '$lib/components/Spacer.svelte';
   const animals = [
     { name: 'Nonna Pina', description: 'Una dolce cagnolona anziana che ha bisogno di cure costanti. Con il tuo aiuto possiamo garantirle una vecchiaia serena.', image: '/hero-2.jpeg' },
     { name: 'Nerone', description: 'Un gatto FIV+ che richiede attenzioni particolari. Il tuo sostegno ci aiuta a coprire le sue spese mediche.', image: '/hero-4.jpeg' },
@@ -7,6 +8,7 @@
 </script>
 
 <div class="bg-gray-50 py-12">
+  <Spacer />
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="lg:text-center">
       <h2 class="text-base text-red-600 font-semibold tracking-wide uppercase">Adozioni a Distanza</h2>

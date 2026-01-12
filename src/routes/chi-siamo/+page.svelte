@@ -1,4 +1,9 @@
+<script>
+	import Spacer from '$lib/components/Spacer.svelte';
+</script>
+
 <div class="bg-white py-12">
+  <Spacer />
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="lg:text-center">
       <h2 class="text-base text-red-600 font-semibold tracking-wide uppercase">Chi Siamo</h2>
