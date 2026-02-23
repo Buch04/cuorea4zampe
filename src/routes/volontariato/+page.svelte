@@ -1,7 +1,7 @@
 <script>
   import Spacer from '$lib/components/Spacer.svelte';
   import { enhance } from '$app/forms';
-  export let form;
+  let { data, form } = $props();
 </script>
 
 <div class="bg-gray-50 py-12">
@@ -19,13 +19,12 @@
 
     <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
       <div class="prose prose-lg text-gray-600">
-        <h3>Cosa fa un volontario?</h3>
+        <strong class="text-lg text-gray-900">Cosa fa un volontario?</strong>
         <p>
           Ci sono tantissimi modi per aiutarci. In base alle tue preferenze e alla tua disponibilità, potrai:
         </p>
         <ul>
           <li><strong>Accudire gli animali:</strong> Pulizia di box e aree comuni, preparazione e distribuzione del cibo, coccole e socializzazione.</li>
-          <li><strong>Portare a spasso i cani:</strong> Un momento fondamentale per il loro benessere fisico e mentale.</li>
           <li><strong>Aiutare negli eventi:</strong> Montaggio di stand, volantinaggio, raccolta fondi durante le nostre iniziative.</li>
           <li><strong>Fare da stallo temporaneo:</strong> Ospitare a casa un animale per un breve periodo, aiutandolo ad abituarsi a una vita in famiglia.</li>
           <li><strong>Trasporti:</strong> Aiutarci a portare i nostri ospiti dal veterinario o a raggiungere la loro nuova casa.</li>

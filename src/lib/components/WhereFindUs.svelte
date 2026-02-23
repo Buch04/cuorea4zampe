@@ -1,7 +1,5 @@
 <script>
-  export let address = 'Via della Miniera 11, 50031 Barberino di Mugello (FI)';
-  export let contactEmail = 'cuorea4zampebarberino@gmail.com';
-  export let phone = '3283511533';
+  let { address = 'Via della Miniera 11, 50031 Barberino di Mugello (FI)', contactEmail = 'cuorea4zampebarberino@gmail.com', phone = '3283511533' } = $props();
 </script>
 
 <section id="dove-trovarci" class="py-12 px-6 bg-white">

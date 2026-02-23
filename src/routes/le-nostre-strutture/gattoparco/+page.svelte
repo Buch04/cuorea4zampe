@@ -25,7 +25,6 @@
             <li><strong>Spazi per l'arrampicata:</strong> Tronchi, mensole e piattaforme per permettere ai gatti di esprimere il loro bisogno di verticalità.</li>
             <li><strong>Zone d'ombra e di sole:</strong> Aree verdi e casette in legno per offrire riparo dal sole estivo e dal freddo invernale.</li>
             <li><strong>Punti di alimentazione e acqua:</strong> Ciotole sempre piene di cibo di qualità e acqua fresca.</li>
-            <li><strong>Giochi e stimoli:</strong> Tunnel, palline e altri giochi per mantenere i nostri ospiti attivi e curiosi.</li>
           </ul>
         </div>
         <div class="mt-8 md:mt-0">
@@ -41,7 +40,7 @@
           <p>
             Nel gattoparco i gatti imparano a convivere con i loro simili, a superare le paure e a fidarsi delle persone. Questo percorso è fondamentale per prepararli a una vita serena in famiglia.
           </p>
-          <p>
+          <p class="mb-6">
             I nostri volontari passano molto tempo con loro, offrendo coccole, giochi e rassicurazioni, aiutando anche i gatti più timidi a sbocciare.
           </p>
           <a href="/adozioni" class="text-red-600 hover:text-red-700 font-semibold">Trova il tuo nuovo amico &rarr;</a>

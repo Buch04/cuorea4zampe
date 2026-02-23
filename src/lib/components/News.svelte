@@ -1,7 +1,6 @@
 <script>
-  export let items = [];
-  export let limit = 3;
-  let showAll = false;
+  let { items = [], limit = 3 } = $props();
+  let showAll = $state(false);
 
   const sampleItems = [
     {
@@ -14,7 +13,7 @@
     {
       title: 'Campagna invernale di raccolta',
       date: '2 Gen 2026',
-      excerpt: 'Sostienici con coperte e cibo per aiutare gli animali durante l’inverno.',
+      excerpt: 'Sostienici con coperte e cibo per aiutare gli animali durante l'inverno.',
       image: '/hero-4.jpeg',
       href: '#'
     },
@@ -27,8 +26,8 @@
     }
   ];
 
-  const source = () => (items && items.length ? items : sampleItems);
-  const visible = () => (showAll ? source() : source().slice(0, limit));
+  const source = $derived(items && items.length ? items : sampleItems);
+  const visible = $derived(showAll ? source : source.slice(0, limit));
 </script>
 
 <section class="py-12">
@@ -36,12 +35,12 @@
     <div class="flex items-center justify-between mb-6">
       <h2 class="text-2xl font-bold text-gray-900">Notizie</h2>
       {#if items.length > limit}
-        <button class="text-sm text-red-600 font-semibold" on:click={() => (showAll = !showAll)}>{showAll ? 'Mostra meno' : 'Mostra tutte'}</button>
+        <button class="text-sm text-red-600 font-semibold" onclick={() => (showAll = !showAll)}>{showAll ? 'Mostra meno' : 'Mostra tutte'}</button>
       {/if}
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {#each visible() as item}
+      {#each visible as item}
         <article class="bg-white rounded-lg overflow-hidden shadow-sm">
           {#if item.image}
             <a href={item.href ?? '#'} class="block h-44 overflow-hidden">

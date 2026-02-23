@@ -1,14 +1,8 @@
 <script>
-	import { onMount } from 'svelte';
+	let { images = ['/hero.jpeg', '/hero-6.jpeg'], title = 'Dalla parte degli animali', subtitle = 'Sosteniamo, proteggiamo e cerchiamo casa agli animali più vulnerabili.', compact = false } = $props();
 
-	// Default carousel images — update filenames if necessary
-	export let images = ['/hero.jpeg', '/hero-6.jpeg'];
-	export let title = 'Dalla parte degli animali';
-	export let subtitle = 'Sosteniamo, proteggiamo e cerchiamo casa agli animali più vulnerabili.';
-	export let compact = false;
-
-	let index = 0;
-	let timer;
+	let index = $state(0);
+	let timer = $state();
 	const delay = 5000;
 
 	function go(delta) {
@@ -19,7 +13,7 @@
 		index = i % images.length;
 	}
 
-	onMount(() => {
+	$effect(() => {
 		timer = setInterval(() => go(1), delay);
 		return () => clearInterval(timer);
 	});
@@ -40,7 +34,7 @@
 					</div>
 					<div class="flex justify-center gap-2 mt-6">
 						{#each images as _, i}
-							<button aria-label={i === index ? `Slide ${i+1} (current)` : `Slide ${i+1}`} class="w-3 h-3 rounded-full" on:click={() => { goTo(i); clearInterval(timer); timer = setInterval(() => go(1), delay); }} style="background: {i === index ? 'white' : 'rgba(255,255,255,0.4)'}"></button>
+							<button aria-label={i === index ? `Slide ${i+1} (current)` : `Slide ${i+1}`} class="w-3 h-3 rounded-full" onclick={() => { goTo(i); clearInterval(timer); timer = setInterval(() => go(1), delay); }} style="background: {i === index ? 'white' : 'rgba(255,255,255,0.4)'}"></button>
 						{/each}
 					</div>
 				</div>
@@ -55,12 +49,12 @@
 					<h1 class="text-5xl md:text-6xl font-extrabold text-white mb-4 leading-tight drop-shadow-lg">{title}</h1>
 					<p class="text-lg md:text-xl text-white mb-8 max-w-2xl opacity-90">{subtitle}</p>
 					<div class="flex flex-col sm:flex-row gap-4 justify-center">
-						<a href="/cosa-facciamo" class="inline-flex items-center justify-center bg-white text-red-600 px-8 py-3 font-semibold rounded-full shadow-lg hover:shadow-xl transform-gpu hover:-translate-y-0.5 transition">Scopri</a>
-						<a href="/dona" class="inline-flex items-center justify-center border border-white/30 text-white px-7 py-3 font-semibold rounded-full hover:bg-white/10 transition">Dona</a>
+						<a href="/chi-siamo" class="inline-flex items-center justify-center bg-white text-red-600 px-8 py-3 font-semibold rounded-full shadow-lg hover:shadow-xl transform-gpu hover:-translate-y-0.5 transition">Scopri</a>
+						<a href="/sostienici" class="inline-flex items-center justify-center border border-white/30 text-white px-7 py-3 font-semibold rounded-full hover:bg-white/10 transition">Dona</a>
 					</div>
 					<div class="flex justify-center gap-3 mt-8">
 						{#each images as _, i}
-							<button aria-label={i === index ? `Slide ${i+1} (current)` : `Slide ${i+1}`} class="w-3 h-3 rounded-full" on:click={() => { goTo(i); clearInterval(timer); timer = setInterval(() => go(1), delay); }} style="background: {i === index ? 'white' : 'rgba(255,255,255,0.35)'}"></button>
+							<button aria-label={i === index ? `Slide ${i+1} (current)` : `Slide ${i+1}`} class="w-3 h-3 rounded-full" onclick={() => { goTo(i); clearInterval(timer); timer = setInterval(() => go(1), delay); }} style="background: {i === index ? 'white' : 'rgba(255,255,255,0.35)'}"></button>
 						{/each}
 					</div>
 				</div>

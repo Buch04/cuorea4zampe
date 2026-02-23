@@ -1,7 +1,7 @@
 <script>
   import Spacer from '$lib/components/Spacer.svelte';
   import { enhance } from '$app/forms';
-  export let form;
+  let { data, form } = $props();
 </script>
 
 <div class="bg-gray-50 py-12">
@@ -24,14 +24,8 @@
           <p>
             La tessera associativa è un modo concreto per dimostrare il tuo impegno. Con il tuo contributo annuale ci aiuti a coprire le spese veterinarie, l'acquisto di cibo e le manutenzioni dei nostri rifugi.
           </p>
-          <p>Come socio, avrai diritto a:</p>
-          <ul>
-            <li>Partecipare alle assemblee e dire la tua sulle decisioni importanti.</li>
-            <li>Ricevere la nostra newsletter con aggiornamenti sui nostri ospiti e le nostre attività.</li>
-            <li>Accedere a eventi esclusivi riservati ai soci.</li>
-          </ul>
           <p>
-            La quota associativa per il 2024 è di <strong>20€</strong>.
+            La quota associativa per il 2026 è di <strong>25€</strong>.
           </p>
         </div>
 

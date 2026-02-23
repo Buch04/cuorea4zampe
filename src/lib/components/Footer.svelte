@@ -18,8 +18,8 @@
 			<div>
 				<h3 class="text-lg font-semibold mb-4">Seguici</h3>
 				<div class="flex space-x-4">
-					<a href="#" class="text-gray-400 hover:text-white transition">Facebook</a>
-					<a href="#" class="text-gray-400 hover:text-white transition">Instagram</a>
+					<a target="_blank" href="https://www.facebook.com/share/17JLnAfRjs/?mibextid=wwXIfr" class="text-gray-400 hover:text-white transition">Facebook</a>
+					<a target="_blank" href="https://www.instagram.com/cuorea4zampe_odv?igsh=MTd6aW0ycWV0NGhidQ==" class="text-gray-400 hover:text-white transition">Instagram</a>
 				</div>
 			</div>
 		</div>
